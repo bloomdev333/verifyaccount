@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - VerifyAccount</title>
+    <style>
+        /* Reusing the same CSS from index.html */
+        :root {
+            --primary: #4285f4;
+            --primary-dark: #3367d6;
+            --secondary: #34a853;
+            --accent: #ea4335;
+            --warning: #fbbc05;
+            --dark-bg: #0f172a;
+            --darker-bg: #0a0f1d;
+            --card-bg: #1e293b;
+            --text: #f1f5f9;
+            --text-light: #cbd5e1;
+            --border: #334155;
+            --gradient: linear-gradient(135deg, #4285f4, #34a853);
+            --gradient-dark: linear-gradient(135deg, #3367d6, #2e8b57);
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(66, 133, 244, 0.08) 0%, transparent 25%),
+                radial-gradient(circle at 90% 80%, rgba(52, 168, 83, 0.08) 0%, transparent 25%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border);
+            background-color: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        .main-content {
+            padding: 4rem 0;
+            min-height: calc(100vh - 300px);
+        }
+
+        .page-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 3rem;
+            border: 1px solid var(--border);
+        }
+
+        .page-content h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .page-content h2 {
+            font-size: 1.8rem;
+            margin: 2.5rem 0 1rem;
+            color: var(--text);
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .page-content h3 {
+            font-size: 1.4rem;
+            margin: 2rem 0 1rem;
+            color: var(--text-light);
+        }
+
+        .page-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .page-content ul, .page-content ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .page-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 3rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            background: var(--dark-bg);
+            border-radius: 50px;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .back-home:hover {
+            border-color: var(--primary);
+            transform: translateX(-5px);
+        }
+
+        footer {
+            background: var(--darker-bg);
+            border-top: 1px solid var(--border);
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+            
+            .page-content {
+                padding: 2rem;
+            }
+            
+            .page-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">✓</div>
+                    <div class="logo-text">VerifyAccount</div>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="privacy-policy.html" class="active">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="page-content">
+                <h1>Privacy Policy</h1>
+                <p><strong>Last Updated:</strong> October 18, 2023</p>
+                
+                <p>VerifyAccount ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our user verification service for video conferences and private meeting rooms.</p>
+                
+                <h2>Information We Collect</h2>
+                <h3>Personal Information</h3>
+                <p>When you use VerifyAccount for user verification to access video conferences and private meeting rooms, we may collect:</p>
+                <ul>
+                    <li><strong>Email Address:</strong> Used for account identification and communication</li>
+                    <li><strong>Basic Profile Information:</strong> Name and profile picture for verification purposes</li>
+                    <li><strong>Authentication Data:</strong> Information provided during the OAuth 2.0 authentication process</li>
+                </ul>
+                
+                <h3>Usage Information</h3>
+                <p>We automatically collect certain information when you use our service:</p>
+                <ul>
+                    <li>Log data (IP address, browser type, pages visited)</li>
+                    <li>Verification attempts and success rates</li>
+                    <li>Service performance metrics</li>
+                </ul>
+                
+                <h2>How We Use Your Information</h2>
+                <p>We use the collected information for the following purposes:</p>
+                <ul>
+                    <li><strong>User Verification:</strong> To accurately identify users for video conference access</li>
+                    <li><strong>Service Improvement:</strong> To enhance our verification algorithms and user experience</li>
+                    <li><strong>Security:</strong> To prevent unauthorized access to private meeting rooms</li>
+                    <li><strong>Communication:</strong> To send important service updates and notifications</li>
+                    <li><strong>Compliance:</strong> To meet legal obligations and enforce our terms</li>
+                </ul>
+                
+                <h2>Google OAuth Scopes</h2>
+                <p>VerifyAccount requests the following minimal OAuth scopes from Google:</p>
+                <ul>
+                    <li><strong>email:</strong> To view your email address for verification purposes</li>
+                    <li><strong>openid:</strong> To authenticate you using OpenID Connect</li>
+                    <li><strong>profile:</strong> To view your basic profile information for identification</li>
+                </ul>
+                <p>We do not request access to any other Google data beyond these minimal scopes necessary for user verification.</p>
+                
+                <h2>Data Security</h2>
+                <p>We implement appropriate technical and organizational security measures to protect your information, including:</p>
+                <ul>
+                    <li>Encryption of data in transit and at rest</li>
+                    <li>Regular security assessments and audits</li>
+                    <li>Access controls and authentication mechanisms</li>
+                    <li>Secure data storage practices</li>
+                </ul>
+                
+                <h2>Data Retention</h2>
+                <p>We retain your personal information only for as long as necessary to:</p>
+                <ul>
+                    <li>Provide the verification service</li>
+                    <li>Comply with legal obligations</li>
+                    <li>Resolve disputes</li>
+                    <li>Enforce our agreements</li>
+                </ul>
+                
+                <h2>Your Rights</h2>
+                <p>Depending on your location, you may have rights regarding your personal information, including:</p>
+                <ul>
+                    <li>The right to access your information</li>
+                    <li>The right to correct inaccurate information</li>
+                    <li>The right to request deletion of your information</li>
+                    <li>The right to restrict or object to processing</li>
+                    <li>The right to data portability</li>
+                </ul>
+                
+                <h2>Third-Party Services</h2>
+                <p>VerifyAccount integrates with video conference platforms and may share verification status with these services to facilitate secure meeting access.</p>
+                
+                <h2>Children's Privacy</h2>
+                <p>Our service is not intended for users under the age of 16. We do not knowingly collect information from children under 16.</p>
+                
+                <h2>Changes to This Privacy Policy</h2>
+                <p>We may update this Privacy Policy periodically. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.</p>
+                
+                <h2>Contact Us</h2>
+                <p>If you have questions about this Privacy Policy or our data practices, please contact us:</p>
+                <ul>
+                    <li><strong>Email:</strong> bloomdev333@gmail.com</li>                   
+                </ul>
+                
+                <a href="index.html" class="back-home">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <div class="logo-icon">✓</div>
+                    <div class="logo-text">VerifyAccount</div>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+                <div class="copyright">
+                    © 2023 VerifyAccount. User Verification Service for Video Conferences.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

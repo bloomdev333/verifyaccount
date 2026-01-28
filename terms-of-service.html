@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - VerifyAccount</title>
+    <style>
+        /* Reusing the same CSS from index.html */
+        :root {
+            --primary: #4285f4;
+            --primary-dark: #3367d6;
+            --secondary: #34a853;
+            --accent: #ea4335;
+            --warning: #fbbc05;
+            --dark-bg: #0f172a;
+            --darker-bg: #0a0f1d;
+            --card-bg: #1e293b;
+            --text: #f1f5f9;
+            --text-light: #cbd5e1;
+            --border: #334155;
+            --gradient: linear-gradient(135deg, #4285f4, #34a853);
+            --gradient-dark: linear-gradient(135deg, #3367d6, #2e8b57);
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(66, 133, 244, 0.08) 0%, transparent 25%),
+                radial-gradient(circle at 90% 80%, rgba(52, 168, 83, 0.08) 0%, transparent 25%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border);
+            background-color: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        .main-content {
+            padding: 4rem 0;
+            min-height: calc(100vh - 300px);
+        }
+
+        .page-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 3rem;
+            border: 1px solid var(--border);
+        }
+
+        .page-content h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .page-content h2 {
+            font-size: 1.8rem;
+            margin: 2.5rem 0 1rem;
+            color: var(--text);
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .page-content h3 {
+            font-size: 1.4rem;
+            margin: 2rem 0 1rem;
+            color: var(--text-light);
+        }
+
+        .page-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .page-content ul, .page-content ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .page-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 3rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            background: var(--dark-bg);
+            border-radius: 50px;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .back-home:hover {
+            border-color: var(--primary);
+            transform: translateX(-5px);
+        }
+
+        footer {
+            background: var(--darker-bg);
+            border-top: 1px solid var(--border);
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+            
+            .page-content {
+                padding: 2rem;
+            }
+            
+            .page-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">✓</div>
+                    <div class="logo-text">VerifyAccount</div>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html" class="active">Terms of Service</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="page-content">
+                <h1>Terms of Service</h1>
+                <p><strong>Last Updated:</strong> October 18, 2023</p>
+                
+                <p>Welcome to VerifyAccount. These Terms of Service ("Terms") govern your use of our user verification service for video conferences and private meeting rooms. By accessing or using VerifyAccount, you agree to be bound by these Terms.</p>
+                
+                <h2>Service Description</h2>
+                <p>VerifyAccount provides user verification services to accurately identify users for secure access to various types of video conferences and private meeting rooms. Our service uses minimal OAuth scopes to authenticate users while protecting their privacy.</p>
+                
+                <h2>Eligibility</h2>
+                <p>You must be at least 16 years old to use VerifyAccount. By using our service, you represent and warrant that you meet this age requirement.</p>
+                
+                <h2>User Verification Process</h2>
+                <p>When using VerifyAccount, you authorize us to:</p>
+                <ol>
+                    <li>Authenticate your identity using Google OAuth 2.0</li>
+                    <li>Verify your information against our security protocols</li>
+                    <li>Share verification status with authorized video conference platforms</li>
+                    <li>Maintain verification records for security purposes</li>
+                </ol>
+                
+                <h2>Google OAuth Authorization</h2>
+                <p>VerifyAccount requests the following minimal scopes through Google OAuth:</p>
+                <ul>
+                    <li><strong>email:</strong> To verify your email address for authentication</li>
+                    <li><strong>openid:</strong> To authenticate using OpenID Connect protocols</li>
+                    <li><strong>profile:</strong> To access basic profile information for identification</li>
+                </ul>
+                <p>We do not request or access any other Google data beyond these essential scopes.</p>
+                
+                <h2>User Responsibilities</h2>
+                <p>As a user of VerifyAccount, you agree to:</p>
+                <ul>
+                    <li>Provide accurate and current information during verification</li>
+                    <li>Maintain the security of your authentication credentials</li>
+                    <li>Use the service only for lawful purposes</li>
+                    <li>Not attempt to circumvent our verification systems</li>
+                    <li>Comply with all applicable laws and regulations</li>
+                </ul>
+                
+                <h2>Video Conference Integration</h2>
+                <p>VerifyAccount may share your verification status with authorized video conference platforms to facilitate secure meeting access. We are not responsible for the privacy practices or security measures of third-party video conference services.</p>
+                
+                <h2>Service Availability</h2>
+                <p>We strive to maintain 99.9% service availability but do not guarantee uninterrupted access. We may perform maintenance or updates that temporarily affect service availability.</p>
+                
+                <h2>Intellectual Property</h2>
+                <p>All content, features, and functionality of VerifyAccount are owned by us and are protected by international copyright, trademark, and other intellectual property laws.</p>
+                
+                <h2>Termination</h2>
+                <p>We may suspend or terminate your access to VerifyAccount if you violate these Terms or engage in activities that compromise the security of our service.</p>
+                
+                <h2>Limitation of Liability</h2>
+                <p>VerifyAccount is provided "as is" without warranties of any kind. We shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of our service.</p>
+                
+                <h2>Indemnification</h2>
+                <p>You agree to indemnify and hold harmless VerifyAccount from any claims, damages, or expenses arising from your use of the service or violation of these Terms.</p>
+                
+                <h2>Governing Law</h2>
+                <p>These Terms shall be governed by the laws of the State of California, without regard to its conflict of law provisions.</p>
+                
+                <h2>Changes to Terms</h2>
+                <p>We reserve the right to modify these Terms at any time. We will notify users of significant changes by posting the updated Terms on our website and updating the "Last Updated" date.</p>
+                
+                <h2>Contact Information</h2>
+                <p>For questions about these Terms, please contact us:</p>
+                <ul>
+                    <li><strong>Email:</strong> bloomdev333@gmail.com </li>                    
+                </ul>
+                
+                <a href="index.html" class="back-home">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <div class="logo-icon">✓</div>
+                    <div class="logo-text">VerifyAccount</div>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+                <div class="copyright">
+                    © 2023 VerifyAccount. User Verification Service for Video Conferences.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
